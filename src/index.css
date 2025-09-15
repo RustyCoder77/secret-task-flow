@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DAO Task Board Design System - Web3 Aesthetic */
+
+@layer base {
+  :root {
+    /* Dark Web3 Theme */
+    --background: 222 20% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 20% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 20% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Purple/Blue Web3 Primary */
+    --primary: 266 85% 58%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Darker secondary for subtle elements */
+    --secondary: 222 20% 18%;
+    --secondary-foreground: 210 40% 80%;
+
+    --muted: 222 20% 16%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 266 85% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 266 85% 58%;
+
+    --radius: 0.75rem;
+    
+    /* DAO-specific design tokens */
+    --dao-purple: 266 85% 58%;
+    --dao-blue: 217 91% 60%;
+    --dao-success: 142 71% 45%;
+    --dao-warning: 48 96% 53%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(266 85% 58%), hsl(217 91% 60%));
+    --gradient-card: linear-gradient(145deg, hsl(222 20% 14%), hsl(222 20% 16%));
+    --gradient-subtle: linear-gradient(180deg, hsl(222 20% 11%), hsl(222 20% 13%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(222 20% 5% / 0.3);
+    --shadow-glow: 0 0 30px hsl(266 85% 58% / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
