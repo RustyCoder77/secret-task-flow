@@ -12,6 +12,22 @@ dist
 dist-ssr
 *.local
 
+# Environment variables and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+.env.*
+
+# Hardhat files
+cache
+artifacts
+typechain-types
+deployments
+deployment-info.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -22,3 +38,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Sensitive files
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.json
+config.json
