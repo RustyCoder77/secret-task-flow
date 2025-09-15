@@ -82,7 +82,7 @@ const initialTasks: Task[] = [
 const TaskBoard = () => {
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
   const { address, isConnected } = useAccount();
-  const { isRegistered, registerContributor } = useSecretTaskFlow();
+  const { isRegistered, registerContributor, contractAddress } = useSecretTaskFlow();
 
   const handleStatusChange = (taskId: string, newStatus: 'todo' | 'in-progress' | 'completed') => {
     setTasks(prevTasks =>
@@ -105,9 +105,7 @@ const TaskBoard = () => {
 
   const handleRegister = () => {
     if (registerContributor) {
-      registerContributor({
-        args: ['encrypted-profile-data'], // This would be actual encrypted data
-      });
+      registerContributor('encrypted-profile-data'); // This would be actual encrypted data
     }
   };
 
@@ -122,6 +120,19 @@ const TaskBoard = () => {
           <Wallet className="h-4 w-4" />
           <AlertDescription>
             Please connect your wallet to access the task board.
+          </AlertDescription>
+        </Alert>
+      </div>
+    );
+  }
+
+  if (contractAddress === '0x0000000000000000000000000000000000000000') {
+    return (
+      <div className="container mx-auto px-6 py-8">
+        <Alert className="max-w-md mx-auto">
+          <Shield className="h-4 w-4" />
+          <AlertDescription className="mb-4">
+            Smart contract not deployed yet. Please deploy the contract first and update the CONTRACT_ADDRESS environment variable.
           </AlertDescription>
         </Alert>
       </div>
